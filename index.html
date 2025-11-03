@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CMC Day — Registration</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "ui-sans-serif", "system-ui"],
+              inter: ["Inter", "ui-sans-serif", "system-ui"],
+            },
+            colors: {
+              primary: "#2596be",
+              secondary: "#ed1b22",
+              charcoal: "#1a1a1a",
+              body: "#4a5568",
+              muted: "#6b7280",
+              alt: "#f9fafb",
+              accent: "#e6f4f9",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-inter text-body bg-white">
+    <!-- Navbar -->
+    <header
+      class="sticky top-0 z-40 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b border-gray-100"
+    >
+      <div
+        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+      >
+        <a
+          href="./index.html"
+          class="flex items-center gap-3"
+          aria-label="CMC Groups Home"
+        >
+          <img
+            src="./assets/image.png"
+            alt="CMC Groups"
+            class="h-8 w-auto"
+            width="120"
+            height="32"
+          />
+          <span
+            class="hidden sm:inline font-poppins text-lg font-semibold text-charcoal"
+            >CMC Groups</span
+          >
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="min-h-screen bg-alt">
+      <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <!-- Header -->
+        <div class="text-center mb-10">
+          <h1 class="font-poppins text-3xl sm:text-4xl font-bold text-charcoal">
+            CMC Day Registration
+          </h1>
+          <!-- Countdown Timer -->
+          <div id="countdown" class="mt-6">
+            <div class="flex justify-center gap-6 sm:gap-10">
+              <div class="text-center">
+                <div id="cd-days" class="font-poppins text-4xl sm:text-6xl font-bold text-charcoal tabular-nums">00</div>
+                <div class="mt-1 text-sm text-muted">days</div>
+              </div>
+              <div class="text-center">
+                <div id="cd-hours" class="font-poppins text-4xl sm:text-6xl font-bold text-charcoal tabular-nums">00</div>
+                <div class="mt-1 text-sm text-muted">hours</div>
+              </div>
+              <div class="text-center">
+                <div id="cd-minutes" class="font-poppins text-4xl sm:text-6xl font-bold text-charcoal tabular-nums">00</div>
+                <div class="mt-1 text-sm text-muted">minutes</div>
+              </div>
+              <div class="text-center">
+                <div id="cd-seconds" class="font-poppins text-4xl sm:text-6xl font-bold text-charcoal tabular-nums">00</div>
+                <div class="mt-1 text-sm text-muted">seconds</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Registration Form -->
+        <div
+          class="rounded-xl bg-white border border-gray-200 shadow-sm p-6 sm:p-8"
+        >
+          <form id="cmc-day-form" class="space-y-6" novalidate>
+            <!-- Event Info at top of form -->
+            <div
+              class="rounded-md bg-accent border border-primary/20 p-4 text-left"
+            >
+              <h2 class="font-poppins font-semibold text-charcoal mb-1">
+                CMC Day Info
+              </h2>
+              <p class="text-sm text-body"><span class="font-semibold text-charcoal">Date:</span> <span>November 6th, 2025</span></p>
+              <p class="text-sm text-body"><span class="font-semibold text-charcoal">Location:</span> <a href="https://ballastpoint.com/location/longbeach/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Ballast Point Brewing Company</a></p>
+              <p class="text-sm text-body"><span class="font-semibold text-charcoal">Address:</span> <a href="https://share.google/uCpcCCLOeG9afZx9D" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">110 N Marina Dr, Long Beach, CA 90803</a></p>
+
+              <p class="text-sm text-body"><span class="font-semibold text-charcoal">Time:</span> <span>6:30 PM</span></p>
+              <p class="text-sm text-body">Food and drinks will be provided.</p>
+            </div>
+            <!-- Name Field -->
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-charcoal mb-1"
+                >Name</label
+              >
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                class="w-full rounded-md border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
+                placeholder="Name"
+              />
+            </div>
+
+            <!-- Phone Number Field -->
+            <div>
+              <label
+                for="phoneNumber"
+                class="block text-sm font-medium text-charcoal mb-1"
+                >Phone Number</label
+              >
+              <input
+                id="phoneNumber"
+                name="phoneNumber"
+                type="tel"
+                required
+                class="w-full rounded-md border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
+                placeholder="Phone Number"
+              />
+            </div>
+
+            <!-- Email Field -->
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-charcoal mb-1"
+                >Email</label
+              >
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                class="w-full rounded-md border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
+                placeholder="Email"
+              />
+            </div>
+
+            <!-- Source Field -->
+            <div>
+              <label
+                for="source"
+                class="block text-sm font-medium text-charcoal mb-1"
+                >How did you hear about CMC Day?</label
+              >
+              <select
+                id="source"
+                name="source"
+                required
+                class="w-full rounded-md border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
+              >
+                <option value="">Select source...</option>
+                <option value="website">Website</option>
+                <option value="referral">Referral</option>
+                <option value="social-media">Social Media</option>
+                <option value="email">Email Campaign</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="pt-4">
+              <button
+                type="submit"
+                class="w-full inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-white text-base font-semibold shadow hover:bg-[#1a7a9e] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 transition-colors"
+              >
+                Register
+              </button>
+            </div>
+
+            <p class="text-xs text-muted text-center">
+              By submitting, you agree to be contacted about CMC Day event
+              details.
+            </p>
+          </form>
+
+          <!-- Success View -->
+          <div id="success-view" class="hidden text-center py-8">
+            <div class="mb-4">
+              <svg
+                class="mx-auto h-16 w-16 text-primary"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h2 class="font-poppins text-xl font-semibold text-charcoal mb-2">
+              Registration Successful!
+            </h2>
+            <p class="text-sm text-body mb-6">
+              Thank you for registering for CMC Day. We'll be in touch soon with
+              event details.
+            </p>
+            <button
+              id="register-another-btn"
+              class="inline-flex items-center justify-center rounded-md border border-primary px-6 py-3 text-primary text-base font-semibold hover:bg-primary hover:text-white transition-colors"
+            >
+              Register Another Person
+            </button>
+          </div>
+        </div>
+
+        <!-- Flyer Image Below Form -->
+        <div class="mt-10">
+          <img
+            src="./assets/cmc-day-flyer-11-6-25.png"
+            alt="CMC Day Flyer"
+            class="mx-auto w-full max-w-4xl h-auto rounded-lg shadow"
+          />
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div
+          class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between"
+        >
+          <div class="max-w-sm">
+            <div class="flex items-center gap-3">
+              <img
+                src="./assets/image.png"
+                alt="CMC Groups"
+                class="h-8 w-auto"
+                width="120"
+                height="32"
+              />
+              <span class="font-poppins text-lg font-semibold text-charcoal"
+                >CMC Groups</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 border-t border-gray-200 pt-6 text-xs text-muted">
+          © <span id="year"></span> CMC Groups. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="./cmc-day.js"></script>
+  </body>
+</html>
