@@ -278,9 +278,46 @@
               Registration Successful!
             </h2>
             <p class="text-sm text-body mb-6">
-              Thank you for registering for CMC Day. We'll be in touch soon with
-              event details.
+              Thank you for registering for CMC Day! Share this QR code with your friends and family to help us spread the word.
             </p>
+            <!-- QR Code Display -->
+            <div class="mb-6">
+              <img
+                src="./assets/cmc-registration-qr-code.png"
+                alt="CMC Day Registration QR Code"
+                class="mx-auto w-48 h-48 sm:w-56 sm:h-56 rounded-md border border-gray-200 shadow"
+              />
+            </div>
+            <div class="flex items-center justify-center gap-3 mb-4">
+              <button
+                id="share-qr-btn"
+                class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-white text-sm font-semibold shadow hover:bg-[#1a7a9e] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 transition-colors"
+              >
+                Share QR Code
+              </button>
+              <a
+                id="download-qr-link"
+                href="./assets/cmc-registration-qr-code.png"
+                download
+                class="inline-flex items-center justify-center rounded-md border border-primary px-4 py-2 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-colors"
+              >
+                Download QR Code
+              </a>
+            </div>
+            <div class="flex items-center justify-center gap-3 mb-6">
+              <button
+                id="share-link-btn"
+                class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-white text-sm font-semibold shadow hover:bg-[#1a7a9e] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 transition-colors"
+              >
+                Share Registration Link
+              </button>
+              <button
+                id="copy-link-btn"
+                class="inline-flex items-center justify-center rounded-md border border-primary px-4 py-2 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-colors"
+              >
+                Copy Registration Link
+              </button>
+            </div>
             <button
               id="register-another-btn"
               class="inline-flex items-center justify-center rounded-md border border-primary px-6 py-3 text-primary text-base font-semibold hover:bg-primary hover:text-white transition-colors"

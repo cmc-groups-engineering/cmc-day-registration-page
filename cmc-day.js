@@ -2,6 +2,9 @@
   const form = document.getElementById('cmc-day-form');
   const successView = document.getElementById('success-view');
   const registerAnotherBtn = document.getElementById('register-another-btn');
+  const shareQrBtn = document.getElementById('share-qr-btn');
+  const shareLinkBtn = document.getElementById('share-link-btn');
+  const copyLinkBtn = document.getElementById('copy-link-btn');
   const year = document.getElementById('year');
   const cdDays = document.getElementById('cd-days');
   const cdHours = document.getElementById('cd-hours');
@@ -141,6 +144,70 @@
         // Focus on name field
         const nameField = document.getElementById('name');
         if (nameField) nameField.focus();
+      }
+    });
+  }
+
+  // Share QR Code (Web Share API with fallback to download)
+  if (shareQrBtn) {
+    shareQrBtn.addEventListener('click', async () => {
+      try {
+        const qrUrl = './assets/cmc-registration-qr-code.png';
+        const response = await fetch(qrUrl);
+        const blob = await response.blob();
+        const file = new File([blob], 'cmc-registration-qr-code.png', { type: 'image/png' });
+
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          await navigator.share({
+            title: 'CMC Day Registration QR Code',
+            text: 'Scan this QR code for CMC Day registration info.',
+            files: [file]
+          });
+        } else {
+          // Fallback: trigger download
+          const link = document.getElementById('download-qr-link');
+          if (link) link.click();
+        }
+      } catch (err) {
+        console.error('Share failed, falling back to download:', err);
+        const link = document.getElementById('download-qr-link');
+        if (link) link.click();
+      }
+    });
+  }
+
+  // Share or copy registration link
+  const registrationUrl = 'https://cmc-groups-engineering.github.io/cmc-day-registration-page/';
+  if (shareLinkBtn) {
+    shareLinkBtn.addEventListener('click', async () => {
+      try {
+        if (navigator.share) {
+          await navigator.share({
+            title: 'CMC Day Registration',
+            text: 'Register for CMC Day at the link below.',
+            url: registrationUrl
+          });
+        } else {
+          await navigator.clipboard.writeText(registrationUrl);
+          shareLinkBtn.textContent = 'Link Copied!';
+          setTimeout(() => (shareLinkBtn.textContent = 'Share Registration Link'), 1500);
+        }
+      } catch (e) {
+        await navigator.clipboard.writeText(registrationUrl).catch(() => {});
+        shareLinkBtn.textContent = 'Link Copied!';
+        setTimeout(() => (shareLinkBtn.textContent = 'Share Registration Link'), 1500);
+      }
+    });
+  }
+
+  if (copyLinkBtn) {
+    copyLinkBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(registrationUrl);
+        copyLinkBtn.textContent = 'Copied!';
+        setTimeout(() => (copyLinkBtn.textContent = 'Copy Registration Link'), 1500);
+      } catch (e) {
+        alert('Copy failed. Please copy manually: ' + registrationUrl);
       }
     });
   }
