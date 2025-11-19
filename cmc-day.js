@@ -16,10 +16,10 @@
     year.textContent = new Date().getFullYear();
   }
 
-  // Countdown to Nov 6, 2025 6:30 PM PST
+  // Countdown to Nov 25, 2025 9:00 AM PST (Thanksgiving Community Giveback start time)
   if (cdDays && cdHours && cdMinutes && cdSeconds) {
     // PST offset (-08:00). Using a fixed offset to avoid DST ambiguity.
-    const target = new Date('2025-11-06T18:00:00-08:00');
+    const target = new Date('2025-11-25T09:00:00-08:00');
 
     function pad2(n) {
       return String(n).padStart(2, '0');
@@ -65,7 +65,7 @@
         phoneNumber: e.target.phoneNumber.value.trim(),
         email: e.target.email.value.trim(),
         source: e.target.source.value,
-        dateOfEvent: 'November 6th, 2025'
+        dateOfEvent: 'November 25th, 2025'
       };
 
       // Validate email
@@ -159,8 +159,8 @@
 
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
           await navigator.share({
-            title: 'CMC Day Registration QR Code',
-            text: 'Scan this QR code for CMC Day registration info.',
+            title: 'Thanksgiving Community Giveback Registration QR Code',
+            text: 'Scan this QR code for the CMC & Donut King 2 Thanksgiving Community Giveback registration info.',
             files: [file]
           });
         } else {
@@ -183,8 +183,8 @@
       try {
         if (navigator.share) {
           await navigator.share({
-            title: 'CMC Day Registration',
-            text: 'Register for CMC Day at the link below.',
+            title: 'Thanksgiving Community Giveback Registration',
+            text: 'Register for the CMC & Donut King 2 Thanksgiving Community Giveback at the link below.',
             url: registrationUrl
           });
         } else {
