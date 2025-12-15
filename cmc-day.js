@@ -16,7 +16,7 @@
     year.textContent = new Date().getFullYear();
   }
 
-  // Countdown to Nov 25, 2025 9:00 AM PST (Thanksgiving Community Giveback start time)
+  
   if (cdDays && cdHours && cdMinutes && cdSeconds) {
     // PST offset (-08:00). Using a fixed offset to avoid DST ambiguity.
     const target = new Date('2025-12-21T18:00:00-08:00');
@@ -163,8 +163,8 @@
 
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
           await navigator.share({
-            title: 'Thanksgiving Community Giveback Registration QR Code',
-            text: 'Scan this QR code for the CMC & Donut King 2 Thanksgiving Community Giveback registration info.',
+            title: 'CMC Groups presents: One Magical Night! Registration QR Code',
+            text: 'Scan this QR code for the CMC Groups presents: One Magical Night! registration info.',
             files: [file]
           });
         } else {
@@ -181,14 +181,14 @@
   }
 
   // Share or copy registration link
-  const registrationUrl = 'https://cmc-groups-engineering.github.io/cmc-day-registration-page/';
+  const registrationUrl = 'https://holiday.cmcgroups.com';
   if (shareLinkBtn) {
     shareLinkBtn.addEventListener('click', async () => {
       try {
         if (navigator.share) {
           await navigator.share({
-            title: 'Thanksgiving Community Giveback Registration',
-            text: 'Register for the CMC & Donut King 2 Thanksgiving Community Giveback at the link below.',
+            title: 'CMC Groups presents: One Magical Night! Registration',
+            text: 'Register for the CMC Groups presents: One Magical Night! at the link below.',
             url: registrationUrl
           });
         } else {
