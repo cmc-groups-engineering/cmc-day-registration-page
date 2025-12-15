@@ -171,7 +171,7 @@
                 >
               </p>
             </div>
-            <!-- Name Field -->
+            <!-- 1. Name Field -->
             <div>
               <label
                 for="name"
@@ -188,24 +188,7 @@
               />
             </div>
 
-            <!-- Age Field -->
-            <div>
-              <label
-                for="age"
-                class="block text-sm font-medium text-charcoal mb-1"
-                >Age</label
-              >
-              <input
-                id="age"
-                name="age"
-                type="number"
-                required
-                class="w-full rounded-md border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
-                placeholder="Age"
-              />
-            </div>
-
-            <!-- Phone Number Field -->
+            <!-- 2. Phone Number Field -->
             <div>
               <label
                 for="phoneNumber"
@@ -222,7 +205,7 @@
               />
             </div>
 
-            <!-- Email Field -->
+            <!-- 3. Email Field -->
             <div>
               <label
                 for="email"
@@ -239,7 +222,204 @@
               />
             </div>
 
-            <!-- Source Field -->
+            <!-- 4. Are you at least 18 years old? -->
+            <div>
+              <label
+                for="ageRestriction"
+                class="block text-sm font-medium text-charcoal mb-1"
+                >Are you at least 18 years old?</label
+              >
+              <select
+                id="ageRestriction"
+                name="ageRestriction"
+                required
+                class="w-full rounded-md border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
+              >
+                <option value="">Select an option...</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <!-- 5. What best describes you right now? -->
+            <div>
+              <label
+                for="description"
+                class="block text-sm font-medium text-charcoal mb-1"
+                >What best describes you right now?</label
+              >
+              <select
+                id="description"
+                name="description"
+                required
+                class="w-full rounded-md border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
+              >
+                <option value="">Select an option...</option>
+                <option value="college-student">College student</option>
+                <option value="recently-graduated">Recently graduated</option>
+                <option value="working-full-time">Working full-time</option>
+                <option value="working-part-time">Working part-time</option>
+                <option value="in-between-jobs">In between jobs</option>
+                <option value="entrepreneur">Entrepreneur / side hustle</option>
+                <option value="exploring">Exploring new opportunities</option>
+              </select>
+            </div>
+
+            <!-- 6. What are you most interested in? (Multi-select) -->
+            <div>
+              <label class="block text-sm font-medium text-charcoal mb-3"
+                >What are you most interested in?</label
+              >
+              <div class="space-y-2">
+                <div class="flex items-center">
+                  <input
+                    id="interest-money"
+                    name="interests"
+                    type="checkbox"
+                    value="making-more-money"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                  />
+                  <label for="interest-money" class="ml-3 text-sm text-body"
+                    >Making more money</label
+                  >
+                </div>
+                <div class="flex items-center">
+                  <input
+                    id="interest-growth"
+                    name="interests"
+                    type="checkbox"
+                    value="personal-growth"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                  />
+                  <label for="interest-growth" class="ml-3 text-sm text-body"
+                    >Personal growth & confidence</label
+                  >
+                </div>
+                <div class="flex items-center">
+                  <input
+                    id="interest-leadership"
+                    name="interests"
+                    type="checkbox"
+                    value="leadership"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                  />
+                  <label for="interest-leadership" class="ml-3 text-sm text-body"
+                    >Leadership development</label
+                  >
+                </div>
+                <div class="flex items-center">
+                  <input
+                    id="interest-schedule"
+                    name="interests"
+                    type="checkbox"
+                    value="flexible-schedule"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                  />
+                  <label for="interest-schedule" class="ml-3 text-sm text-body"
+                    >Flexible schedule</label
+                  >
+                </div>
+                <div class="flex items-center">
+                  <input
+                    id="interest-sales-exp"
+                    name="interests"
+                    type="checkbox"
+                    value="sales-experience"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                  />
+                  <label for="interest-sales-exp" class="ml-3 text-sm text-body"
+                    >Sales experience</label
+                  >
+                </div>
+                <div class="flex items-center">
+                  <input
+                    id="interest-career"
+                    name="interests"
+                    type="checkbox"
+                    value="long-term-career"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                  />
+                  <label for="interest-career" class="ml-3 text-sm text-body"
+                    >Building a long-term career</label
+                  >
+                </div>
+                <div class="flex items-center">
+                  <input
+                    id="interest-networking"
+                    name="interests"
+                    type="checkbox"
+                    value="networking"
+                    class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                  />
+                  <label for="interest-networking" class="ml-3 text-sm text-body"
+                    >Networking / meeting driven people</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- 7. Have you ever worked commission-based? -->
+            <div>
+              <label
+                for="commissionExperience"
+                class="block text-sm font-medium text-charcoal mb-1"
+                >Have you ever worked in a commission-based role?</label
+              >
+              <select
+                id="commissionExperience"
+                name="commissionExperience"
+                required
+                class="w-full rounded-md border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
+              >
+                <option value="">Select an option...</option>
+                <option value="yes-liked">Yes, and I liked it</option>
+                <option value="yes-not-for-me">Yes, but it wasn't for me</option>
+                <option value="no-open">No, but I'm open to it</option>
+                <option value="no-prefer-salary">No, and I prefer hourly/salary</option>
+              </select>
+            </div>
+
+            <!-- 8. How open are you to learning more if it makes sense? -->
+            <div>
+              <label
+                for="openToLearning"
+                class="block text-sm font-medium text-charcoal mb-1"
+                >If the right opportunity made sense, how open would you be to learning more?</label
+              >
+              <select
+                id="openToLearning"
+                name="openToLearning"
+                required
+                class="w-full rounded-md border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
+              >
+                <option value="">Select an option...</option>
+                <option value="very-open">Very open</option>
+                <option value="somewhat-open">Somewhat open</option>
+                <option value="just-curious">Just curious</option>
+                <option value="not-interested">Not interested (just attending)</option>
+              </select>
+            </div>
+
+            <!-- 9. Do you have transportation? -->
+            <div>
+              <label
+                for="transportation"
+                class="block text-sm font-medium text-charcoal mb-1"
+                >Do you have transportation?</label
+              >
+              <select
+                id="transportation"
+                name="transportation"
+                required
+                class="w-full rounded-md border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
+              >
+                <option value="">Select an option...</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            <!-- 10. How did you hear about this event? -->
             <div>
               <label
                 for="source"
@@ -259,59 +439,6 @@
                 <option value="email">Email Campaign</option>
                 <option value="other">Other</option>
               </select>
-            </div>
-
-            <!-- Transportation Field -->
-            <div>
-              <label
-                for="transportation"
-                class="block text-sm font-medium text-charcoal mb-1"
-                >Do you have Transportation?</label
-              >
-              <select
-                id="transportation"
-                name="transportation"
-                required
-                class="w-full rounded-md border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
-              >
-                <option value="">Select an option...</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-            </div>
-
-            <!-- Current Occupation Field -->
-            <div>
-              <label
-                for="currentOccupation"
-                class="block text-sm font-medium text-charcoal mb-1"
-                >Current Occupation</label
-              >
-              <input
-                id="currentOccupation"
-                name="currentOccupation"
-                type="text"
-                required
-                class="w-full rounded-md border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
-                placeholder="Current Occupation"
-              />
-            </div>
-
-            <!-- Past Sale Experience Field -->
-            <div>
-              <label
-                for="pastSaleExperience"
-                class="block text-sm font-medium text-charcoal mb-1"
-                >Past Sale Experience</label
-              >
-              <input
-                id="pastSaleExperience"
-                name="pastSaleExperience"
-                type="text"
-                required
-                class="w-full rounded-md border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
-                placeholder="Past Sale Experience"
-              />
             </div>
 
             <!-- Submit Button -->
