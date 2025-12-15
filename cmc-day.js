@@ -62,10 +62,14 @@
       // Collect form data using the specified structure
       const formData = {
         name: e.target.name.value.trim(),
+        age: e.target.age.value.trim(),
         phoneNumber: e.target.phoneNumber.value.trim(),
         email: e.target.email.value.trim(),
         source: e.target.source.value,
-        dateOfEvent: 'November 25th, 2025'
+        transportation: e.target.transportation.value,
+        currentOccupation: e.target.currentOccupation.value.trim(),
+        pastSaleExperience: e.target.pastSaleExperience.value.trim(),
+        dateOfEvent: 'December 21st, 2025'
       };
 
       // Validate email
