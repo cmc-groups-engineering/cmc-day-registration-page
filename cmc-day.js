@@ -19,7 +19,7 @@
   // Countdown to Nov 25, 2025 9:00 AM PST (Thanksgiving Community Giveback start time)
   if (cdDays && cdHours && cdMinutes && cdSeconds) {
     // PST offset (-08:00). Using a fixed offset to avoid DST ambiguity.
-    const target = new Date('2025-11-25T09:00:00-08:00');
+    const target = new Date('2025-12-21T18:00:00-08:00');
 
     function pad2(n) {
       return String(n).padStart(2, '0');
